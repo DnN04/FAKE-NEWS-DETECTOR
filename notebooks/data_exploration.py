@@ -1,3 +1,4 @@
+#PHASE 1 - DATASET
 import pandas as pd
 
 # Load CSVs
@@ -22,3 +23,22 @@ print("\nMissing values:\n", df.isnull().sum())
 
 # ✅ Check how many are fake vs real
 print("\nLabel distribution:\n", df['label'].value_counts())
+
+
+#PHASE 02.A- TEXT CLEANING
+import nltk
+import string
+from nltk.corpus import stopwords
+
+nltk.download('stopwords')
+stop_words = set(stopwords.words('english'))
+
+def clean_text(text):
+    text = text.lower()
+    text = ''.join([char for char in text if char not in string.punctuation])
+    words = text.split()
+    words = [word for word in words if word not in stop_words]
+    return ' '.join(words)
+
+df['text'] = df['text'].apply(clean_text)
+print(df['text'].head())
