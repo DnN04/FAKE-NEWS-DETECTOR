@@ -42,3 +42,14 @@ def clean_text(text):
 
 df['text'] = df['text'].apply(clean_text)
 print(df['text'].head())
+
+
+#PHASE 02.B- TF-IDF Vectorization
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+tfidf = TfidfVectorizer(max_df=0.7)  # ignore overly common words
+X = tfidf.fit_transform(df['text'])  # transforms text to vector
+y = df['label']
+
+print(X.shape)  # check how many features we created
+
