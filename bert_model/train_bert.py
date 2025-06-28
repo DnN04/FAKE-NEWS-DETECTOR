@@ -51,27 +51,66 @@ val_dataset = FakeNewsDataset(val_encodings, val_labels)
 #XXXXXXXXXXXX
 #1.D MODEL+TRAINER
 
-model = BertForSequenceClassification.from_pretrained("bert-base-uncased")
+# from transformers import BertForSequenceClassification, Trainer, TrainingArguments
 
+# # Initialize model with number of labels (2 for fake/real)
+# model = BertForSequenceClassification.from_pretrained(
+#     "bert-base-uncased",
+#     num_labels=2  # <-- THIS IS CRUCIAL
+# )
+
+# # Updated TrainingArguments (works with newer versions)
+# training_args = TrainingArguments(
+#     output_dir="/content/bert_model",
+#     eval_strategy="epoch",  # Changed from evaluation_strategy
+#     num_train_epochs=2,
+#     per_device_train_batch_size=8,  # Reduced from 16 for stability
+#     per_device_eval_batch_size=8,
+#     warmup_steps=500,
+#     weight_decay=0.01,
+#     logging_dir="/content/logs",
+#     logging_steps=10,
+# )
+
+# trainer = Trainer(
+#     model=model,
+#     args=training_args,
+#     train_dataset=train_dataset,  # Make sure these are proper datasets
+#     eval_dataset=val_dataset,
+# )
+
+from transformers import BertForSequenceClassification, Trainer, TrainingArguments
+
+# Initialize model with number of labels (2 for fake/real)
+model = BertForSequenceClassification.from_pretrained(
+    "bert-base-uncased",
+    num_labels=2  # <-- THIS IS CRUCIAL
+)
+
+# Updated TrainingArguments (works with newer versions)
 training_args = TrainingArguments(
-    output_dir="./model",
+    output_dir="/content/bert_model",
+    eval_strategy="epoch",  # Changed from evaluation_strategy
     num_train_epochs=2,
-    per_device_train_batch_size=16,
-    per_device_eval_batch_size=16,
+    per_device_train_batch_size=4,  # Reduced from 8/16 for stability
+    per_device_eval_batch_size=4,
     warmup_steps=500,
     weight_decay=0.01,
-    evaluation_strategy="epoch",
-    logging_dir="./logs",
+    logging_dir="/content/logs",
     logging_steps=10,
+
+    dataloader_pin_memory=True,  # Faster data transfer to GPU
+    dataloader_num_workers=2,    # Parallel data loading
+    fp16=True,                   # Enable mixed precision training
+    gradient_accumulation_steps=4 # Simulate larger batch size
 )
 
 trainer = Trainer(
     model=model,
     args=training_args,
-    train_dataset=train_dataset,
+    train_dataset=train_dataset,  # Make sure these are proper datasets
     eval_dataset=val_dataset,
 )
-
 #XXXXXXXXXXXX
 #1.E TRAIN
 trainer.train()
@@ -82,3 +121,4 @@ model.save_pretrained("bert_model/model")
 tokenizer.save_pretrained("bert_model/model")
 
 print("BERT model trained and saved to bert_model/model/")
+ 
