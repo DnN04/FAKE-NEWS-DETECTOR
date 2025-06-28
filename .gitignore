@@ -5,3 +5,4 @@ __pycache__/
 .env
 .venv/
 bert_model/model/
+bert_model/model/
