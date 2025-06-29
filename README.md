@@ -8,22 +8,11 @@ A Machine Learning + NLP-based Fake News Detection system that classifies news h
 
 ## 📁 Project Structure
 
-fake-news-detector/
-├── classic_model/
-│   ├── fake_news_detector.py
-│   ├── model/
-│   │   ├── fake_news_model.pkl
-│   │   └── tfidf_vectorizer.pkl
-│   └── app.py              # Streamlit app (TF-IDF version)
-├── bert_model/
-│   ├── train_bert.py       # BERT fine-tuning script
-│   ├── app.py              # Streamlit app (BERT version)
-│   └── model/              # Fine-tuned BERT model & tokenizer
-├── data/
-│   ├── Fake.csv
-│   └── True.csv
-├── README.md
-└── requirements.txt
+## 📁 Project Structure
+- `data/` → raw dataset (not pushed to GitHub)
+- `notebooks/` → data cleaning and exploration
+- `app.py` → Streamlit frontend
+- `model/` → saved ML model
 
 ---
 
@@ -121,7 +110,7 @@ The government will declare a national emergency tomorrow.
 
 **Durgesh Narayan Nayak**  
 2nd Year CSE (AI & ML) Student  
-[LinkedIn](https://www.linkedin.com/in/yourprofile)  
+[LinkedIn](https://www.linkedin.com/in/durgesh-narayan-nayak-82098a353/)  
 [GitHub](https://github.com/DnN04)
 
 ---
