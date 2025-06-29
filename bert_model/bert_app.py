@@ -176,7 +176,7 @@ if st.button("⟣ Initiate Quantum Analysis", key="analyze-btn"):
                         font-size: 1.2rem;
                         box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
                     ">
-                        ✗ Disinformation Detected ({(fake_prob - real_prob):.1f}% confidence on data)
+                        ✗ Misinformation Detected ({(fake_prob - real_prob):.1f}% confidence on data)
                     </div>
                     """, unsafe_allow_html=True)
                 
