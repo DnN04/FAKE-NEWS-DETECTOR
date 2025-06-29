@@ -159,7 +159,7 @@ if st.button("⟣ Initiate Quantum Analysis", key="analyze-btn"):
                         font-size: 1.2rem;
                         box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
                     ">
-                        ✓ Authentic Content ({(real_prob - fake_prob):.1f}% confidence delta)
+                        ✓ Authentic Content ({(real_prob - fake_prob):.1f}% confidence on data)
                     </div>
                     """, unsafe_allow_html=True)
                 else:
@@ -176,7 +176,7 @@ if st.button("⟣ Initiate Quantum Analysis", key="analyze-btn"):
                         font-size: 1.2rem;
                         box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
                     ">
-                        ✗ Disinformation Detected ({(fake_prob - real_prob):.1f}% confidence delta)
+                        ✗ Disinformation Detected ({(fake_prob - real_prob):.1f}% confidence on data)
                     </div>
                     """, unsafe_allow_html=True)
                 
@@ -218,7 +218,7 @@ st.markdown(f"""
 ">
     {APP_NAME} | Cognitive Authentication System<br>
     <div style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">
-        © 2023 Durgesh Narayan Nayak | v{VERSION}
+        © 2025 Durgesh Narayan Nayak | v{VERSION}
     </div>
 </div>
 <div style="position: fixed; bottom: 10px; right: 10px; font-size: 0.8rem; color: rgba(180, 180, 220, 0.3); letter-spacing: 0.05em;">
