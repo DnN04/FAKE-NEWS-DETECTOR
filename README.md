@@ -1,4 +1,4 @@
-# 📰 Fake News Detector using BERT and Classical ML
+# 📰 Veritas AI-Fake News Detector using BERT and Classical ML
 
 A Machine Learning + NLP-based Fake News Detection system that classifies news headlines as **REAL** or **FAKE** using both:
 - ✅ A Classical Model (TF-IDF + PassiveAggressiveClassifier)
