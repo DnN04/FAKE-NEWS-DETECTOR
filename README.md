@@ -6,7 +6,11 @@ A Machine Learning + NLP-based Fake News Detection system that classifies news h
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Overview
+<video controls src="InShot_20250630_123434725.mp4" title="Title"></video>
+![SCREENSHOT](FAKENEWS.JPG)
+![SCREENSHOT](InShot_20250630_133511233.jpg)
+![SCREENSHOT](InShot_20250630_181929671.jpg)
 
 ## 📁 Project Structure
 - `data/` → raw dataset (not pushed to GitHub)
