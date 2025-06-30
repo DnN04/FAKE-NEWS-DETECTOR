@@ -6,8 +6,8 @@ A Machine Learning + NLP-based Fake News Detection system that classifies news h
 
 ---
 
-## 📁 Project Overview
-<video controls src="InShot_20250630_123434725.mp4" title="Title"></video>
+## 📁 Project Demo
+<video controls src="InShot_20250630_123434725.mp4" title="DEMO "></video>
 ![SCREENSHOT](FAKENEWS.JPG)
 ![SCREENSHOT](InShot_20250630_133511233.jpg)
 ![SCREENSHOT](InShot_20250630_181929671.jpg)
@@ -87,13 +87,6 @@ The government will declare a national emergency tomorrow.
 - Streamlit UI development
 - Google Colab model training
 - GitHub project structure and LFS handling
-
----
-
-## 🎥 Demo
-
-[🔗 Link to Demo Video](https://your-demo-link.com)  
-*(Hosted on Google Drive / YouTube)*
 
 ---
 
